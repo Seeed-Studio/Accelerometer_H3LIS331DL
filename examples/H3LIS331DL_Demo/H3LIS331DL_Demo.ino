@@ -7,9 +7,9 @@
 #include <Wire.h>
 
 //please get these value by running H3LIS331DL_AdjVal Sketch.
-#define VAL_X_AXIS  100
-#define VAL_Y_AXIS  180
-#define VAL_Z_AXIS  140
+#define VAL_X_AXIS  203
+#define VAL_Y_AXIS  165
+#define VAL_Z_AXIS  371
 
 H3LIS331DL h3lis;
 
@@ -33,10 +33,13 @@ void loop(){
   h3lis.getAcceleration(xyz);
   Serial.print("accelerate of x, y, z = ");
   Serial.print(xyz[0]);
+  Serial.print("g");
   Serial.print("\t");
   Serial.print(xyz[1]);
+  Serial.print("g");
   Serial.print("\t");
-  Serial.println(xyz[2]);  
+  Serial.print(xyz[2]);
+  Serial.println("g");  
   
   delay(1000);
 }

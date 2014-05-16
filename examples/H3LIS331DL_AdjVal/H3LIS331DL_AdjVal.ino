@@ -56,14 +56,14 @@ void getAdjParameter()
      Serial.println("calculate success");
      delay(1000);
    }
-   int16_t axis_x = (dataBuf[0][2] + dataBuf[1][2])*0.3 + (dataBuf[2][2]+dataBuf[3][2]+dataBuf[4][2]+dataBuf[5][2])/10;
+   int16_t axis_x = (dataBuf[4][0] + dataBuf[5][0])*0.3 + (dataBuf[0][0]+dataBuf[1][0]+dataBuf[2][0]+dataBuf[3][0])/10;   
    Serial.print("adjust value of X axis is ");
    Serial.println(axis_x);
    int16_t axis_y = (dataBuf[2][1] + dataBuf[3][1])*0.3 + (dataBuf[0][1]+dataBuf[1][1]+dataBuf[4][1]+dataBuf[5][1])/10;
-   Serial.print("adjust value of X axis is ");
+   Serial.print("adjust value of Y axis is ");
    Serial.println(axis_y);
-   int16_t axis_z = (dataBuf[4][0] + dataBuf[5][0])*0.3 + (dataBuf[0][0]+dataBuf[1][0]+dataBuf[2][0]+dataBuf[3][0])/10;   
-   Serial.print("adjust value of X axis is ");
+   int16_t axis_z = (dataBuf[0][2] + dataBuf[1][2])*0.3 + (dataBuf[2][2]+dataBuf[3][2]+dataBuf[4][2]+dataBuf[5][2])/10;
+   Serial.print("adjust value of Z axis is ");
    Serial.println(axis_z);
    Serial.println("note: these data can be used in H3LISDL_Demo sketch");
 }

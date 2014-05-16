@@ -1,4 +1,5 @@
 ## Grove - 3-Axis Digital Accelerometer(±400g)
+[![Grove - 3-Axis Digital Accerometer(±400g)](http://www.seeedstudio.com/wiki/images/8/83/Grove_-_3-Axis_Digital_Accelerometer%28400g%29.jpg)](http://goo.gl/MrDXWz)
 
 This is an Arduino library to use H3LIS331DL as a 3-Axis Digital Accelerometer
 
