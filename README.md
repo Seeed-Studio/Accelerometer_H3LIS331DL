@@ -1,7 +1,9 @@
 ## Grove - 3-Axis Digital Accelerometer(±400g)
-[![Grove - 3-Axis Digital Accerometer(±400g)](http://www.seeedstudio.com/wiki/images/8/83/Grove_-_3-Axis_Digital_Accelerometer%28400g%29.jpg)](http://goo.gl/MrDXWz)
+[![Grove - 3-Axis Digital Accerometer(±400g)](http://www.seeedstudio.com/depot/bmz_cache/1/10c3981c549bac7dcb138742e4cf28d4.image.530x397.jpg)](http://www.seeedstudio.com/depot/Grove-3Axis-Digital-Accelerometer400g-p-1897.html?cPath=25_132)
+## Xadow - 3-Axis Digital Accelerometer(±400g)
+[![Xadow - 3-Axis Digital Accerometer(±400g)](http://www.seeedstudio.com/depot/bmz_cache/1/1e0d38b123fda92e1872df69dd6145ec.image.530x397.jpg)](http://www.seeedstudio.com/depot/Xadow3Axis-Digital-Accelerometer400g-p-1896.html?cPath=84_120)]
 
-This is an Arduino library to use H3LIS331DL as a 3-Axis Digital Accelerometer
+This is an Arduino library to use H3LIS331DL as a 3-Axis Digital Accelerometer, it works well with Seeed's [Grove - 3-Axis Digital Accelerometer(±400g)](http://www.seeedstudio.com/depot/Grove-3Axis-Digital-Accelerometer400g-p-1897.html?cPath=25_132) and [Xadow - 3-Axis Digital Accelerometer(±400g)](http://www.seeedstudio.com/depot/Xadow3Axis-Digital-Accelerometer400g-p-1896.html?cPath=84_120) both.
 
 ### Features
 + Ultra low power mode consumption down to 10 µA
