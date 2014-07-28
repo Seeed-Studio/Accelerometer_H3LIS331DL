@@ -3,7 +3,7 @@
 ## Xadow - 3-Axis Digital Accelerometer(±400g)
 [![Xadow - 3-Axis Digital Accerometer(±400g)](http://www.seeedstudio.com/depot/bmz_cache/1/1e0d38b123fda92e1872df69dd6145ec.image.530x397.jpg)](http://www.seeedstudio.com/depot/Xadow3Axis-Digital-Accelerometer400g-p-1896.html?cPath=84_120)
 
-This is an Arduino library to use H3LIS331DL as a 3-Axis Digital Accelerometer, it works well with Seeed's [Grove - 3-Axis Digital Accelerometer(±400g)](http://www.seeedstudio.com/depot/Grove-3Axis-Digital-Accelerometer400g-p-1897.html?cPath=25_132) and [Xadow - 3-Axis Digital Accelerometer(±400g)](http://www.seeedstudio.com/depot/Xadow3Axis-Digital-Accelerometer400g-p-1896.html?cPath=84_120) both.
+This is an Arduino library to use H3LIS331DL as a 3-Axis Digital Accelerometer, it works well with Seeed's [Grove - 3-Axis Digital Accelerometer(±400g)](http://www.seeedstudio.com/depot/Grove-3Axis-Digital-Accelerometer400g-p-1897.html?cPath=25_132) and [Xadow - 3-Axis Digital Accelerometer(±400g)](http://www.seeedstudio.com/depot/Xadow3Axis-Digital-Accelerometer400g-p-1896.html?cPath=84_120) both. For more information, you can visit our wiki [grove_3_Axis_Digital_Accelerometer_H3LIS331DL][1] and [xadow_3_Axis_Digital_Accelerometer_H3LIS331DL][2] 
 
 ### Features
 + Ultra low power mode consumption down to 10 µA
@@ -23,17 +23,16 @@ please follow the example sketch.(**H3LIS331DL_AdjVal** and **H3LIS331DL_Demo**)
 
 ----
 
-This software is written by lawliet ([wei.zou@seeedstudio.com](wei.zou@seeedstudio.com "wei.zou@seeedstudio.com")) for seeed studio<br>
-and is licensed under [The MIT License](http://opensource.org/licenses/mit-license.php). Check License.txt for more information.<br>
+This software is written by lawliet zou (![](http://www.seeedstudio.com/wiki/images/f/f8/Email-lawliet.zou.jpg)) for [Seeed Technology Inc.](http://www.seeed.cc) and is licensed under [The MIT License](http://opensource.org/licenses/mit-license.php). Check License.txt/LICENSE for the details of MIT license.<br>
 
 Contributing to this software is warmly welcomed. You can do this basically by<br>
 [forking](https://help.github.com/articles/fork-a-repo), committing modifications and then [pulling requests](https://help.github.com/articles/using-pull-requests) (follow the links above<br>
 for operating guide). Adding change log and your contact into file header is encouraged.<br>
 Thanks for your contribution.
 
-Seeed Studio is an open hardware facilitation company based in Shenzhen, China. <br>
-Benefiting from local manufacture power and convenient global logistic system, <br>
-we integrate resources to serve new era of innovation. Seeed also works with <br>
-global distributors and partners to push open hardware movement.<br>
+Seeed is a hardware innovation platform for makers to grow inspirations into differentiating products. By working closely with technology providers of all scale, Seeed provides accessible technologies with quality, speed and supply chain knowledge. When prototypes are ready to iterate, Seeed helps productize 1 to 1,000 pcs using in-house engineering, supply chain management and agile manufacture forces. Seeed also team up with incubators, Chinese tech ecosystem, investors and distribution channels to portal Maker startups beyond.
 
-[![Analytics](https://ga-beacon.appspot.com/UA-46589105-3/ Grove_3Axis_Digital_Accelerometer_H3LIS331DL)](https://github.com/igrigorik/ga-beacon)
+[1]: http://www.seeedstudio.com/wiki/Grove_-_3-Axis_Digital_Accelerometer(%C2%B1400g)
+[2]: http://www.seeedstudio.com/wiki/Xadow-_3-Axis_Digital_Accelerometer(%C2%B1400g)
+
+[![Analytics](https://ga-beacon.appspot.com/UA-46589105-3/Accelerometer_H3LIS331DL)](https://github.com/igrigorik/ga-beacon)

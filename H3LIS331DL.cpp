@@ -1,24 +1,55 @@
+/*
+ * H3LIS331DL.cpp
+ * A library for 3-Axis Digital Accelerometer(±400g)
+ *  
+ * Copyright (c) 2014 seeed technology inc.
+ * Website    : www.seeed.cc
+ * Author     : lawliet zou
+ * Create Time: April 2014
+ * Change Log :
+ *
+ * The MIT License (MIT)
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+ 
 #include "H3LIS331DL.h"
 #include <Wire.h>
 
 void H3LIS331DL::init(H3LIS331DL_ODR_t  odr,H3LIS331DL_Mode_t mode,H3LIS331DL_Fullscale_t fullScale){
 
-	Wire.begin();
-	//set output data rate
-	setODR(odr);
+    Wire.begin();
+    //set output data rate
+    setODR(odr);
     //set PowerMode 
     setMode( mode);
     //set Fullscale
-	setFullScale( fullScale);
+    setFullScale( fullScale);
     //set axis Enable
     setAxis( H3LIS331DL_X_ENABLE | H3LIS331DL_Y_ENABLE |  H3LIS331DL_Z_ENABLE);
 }
 
 void H3LIS331DL::importPara(int16_t val_x, int16_t val_y, int16_t val_z)
 {
-	_adjVal[0] = val_x;
-	_adjVal[1] = val_y;
-	_adjVal[2] = val_z;
+    _adjVal[0] = val_x;
+    _adjVal[1] = val_y;
+    _adjVal[2] = val_z;
 }
 void H3LIS331DL::readXYZ(int16_t* x, int16_t* y, int16_t* z)
 {
@@ -26,7 +57,7 @@ void H3LIS331DL::readXYZ(int16_t* x, int16_t* y, int16_t* z)
     AxesRaw_t data;
     status_t response = getAccAxesRaw(&data);
     if(MEMS_SUCCESS == response){
-		*x = (data.AXIS_X - _adjVal[0]);
+        *x = (data.AXIS_X - _adjVal[0]);
         *y = (data.AXIS_Y - _adjVal[1]);
         *z = (data.AXIS_Z - _adjVal[2]);
     }
@@ -34,13 +65,13 @@ void H3LIS331DL::readXYZ(int16_t* x, int16_t* y, int16_t* z)
 
 void H3LIS331DL::getAcceleration(double* xyz)
 {
-	AxesRaw_t data;
-	double gains = 0.003;
-	getAccAxesRaw(&data);
-	
-	xyz[0] = (data.AXIS_X - _adjVal[0]) * gains;
-	xyz[1] = (data.AXIS_Y - _adjVal[1]) * gains;
-	xyz[2] = (data.AXIS_Z - _adjVal[2]) * gains;
+    AxesRaw_t data;
+    double gains = 0.003;
+    getAccAxesRaw(&data);
+    
+    xyz[0] = (data.AXIS_X - _adjVal[0]) * gains;
+    xyz[1] = (data.AXIS_Y - _adjVal[1]) * gains;
+    xyz[2] = (data.AXIS_Z - _adjVal[2]) * gains;
 }
 
 
@@ -143,7 +174,7 @@ status_t H3LIS331DL::setFullScale(H3LIS331DL_Fullscale_t fs) {
   if( !readReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_CTRL_REG4, &value) )
     return MEMS_ERROR;
   
-  value &= 0xCF;	
+  value &= 0xCF;    
   value |= (fs<<H3LIS331DL_FS);
   
   if( !writeReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_CTRL_REG4, value) )
@@ -189,7 +220,7 @@ status_t H3LIS331DL::setBLE(H3LIS331DL_Endianess_t ble) {
   if( !readReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_CTRL_REG4, &value) )
     return MEMS_ERROR;
   
-  value &= 0xBF;	
+  value &= 0xBF;    
   value |= (ble<<H3LIS331DL_BLE);
   
   if( !writeReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_CTRL_REG4, value) )
@@ -212,7 +243,7 @@ status_t H3LIS331DL::setFDS(State_t fds) {
   if( !readReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_CTRL_REG2, &value) )
     return MEMS_ERROR;
   
-  value &= 0xEF;	
+  value &= 0xEF;    
   value |= (fds<<H3LIS331DL_FDS);
   
   if( !writeReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_CTRL_REG2, value) )
@@ -235,7 +266,7 @@ status_t H3LIS331DL::setBOOT(State_t boot) {
   if( !readReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_CTRL_REG2, &value) )
     return MEMS_ERROR;
   
-  value &= 0x7F;	
+  value &= 0x7F;    
   value |= (boot<<H3LIS331DL_BOOT);
   
   if( !writeReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_CTRL_REG2, value) )
@@ -1002,17 +1033,17 @@ status_t H3LIS331DL::getStatusBit(byte statusBIT, byte *val) {
 * Return         : Status [MEMS_ERROR, MEMS_SUCCESS]
 *******************************************************************************/
 status_t H3LIS331DL::getAccAxesRaw(AxesRaw_t* buff) {
-	byte valueL = 0,valueH = 0;
-	readReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_OUT_X_L, &valueL);
-	readReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_OUT_X_H, &valueH);
-	buff->AXIS_X = (valueH<<8)|valueL;
-	readReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_OUT_Y_L, &valueL);
-	readReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_OUT_Y_H, &valueH);
-	buff->AXIS_Y = (valueH<<8)|valueL;
-	readReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_OUT_Z_L, &valueL);
-	readReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_OUT_Z_H, &valueH);
-	buff->AXIS_Z = (valueH<<8)|valueL;
-	return MEMS_SUCCESS;  
+    byte valueL = 0,valueH = 0;
+    readReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_OUT_X_L, &valueL);
+    readReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_OUT_X_H, &valueH);
+    buff->AXIS_X = (valueH<<8)|valueL;
+    readReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_OUT_Y_L, &valueL);
+    readReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_OUT_Y_H, &valueH);
+    buff->AXIS_Y = (valueH<<8)|valueL;
+    readReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_OUT_Z_L, &valueL);
+    readReg(H3LIS331DL_MEMS_I2C_ADDRESS, H3LIS331DL_OUT_Z_H, &valueH);
+    buff->AXIS_Z = (valueH<<8)|valueL;
+    return MEMS_SUCCESS;  
 }
 
 
@@ -1232,12 +1263,12 @@ status_t H3LIS331DL::getInt2SrcBit(byte statusBIT, byte *val) {
 }
 
 /*******************************************************************************
-* Function Name		: readReg
-* Description		: Generic Reading function. It must be full filled with either
-*			        : I2C or SPI reading functions					
-* Input			    : Register Address
-* Output		    : Data Read
-* Return		    : Status [MEMS_ERROR, MEMS_SUCCESS]
+* Function Name     : readReg
+* Description       : Generic Reading function. It must be full filled with either
+*                   : I2C or SPI reading functions                  
+* Input             : Register Address
+* Output            : Data Read
+* Return            : Status [MEMS_ERROR, MEMS_SUCCESS]
 *******************************************************************************/
 uint8_t H3LIS331DL::readReg(byte deviceAddr, byte Reg, byte* Data) {
   
@@ -1249,30 +1280,30 @@ uint8_t H3LIS331DL::readReg(byte deviceAddr, byte Reg, byte* Data) {
   // return MEMS_SUCCESS;
 // Reads num bytes starting from address register on device in to _buff array
     byte num = 1;
-	Wire.beginTransmission(deviceAddr); // start transmission to device 
-	Wire.write(Reg);             // sends address to read from
-	Wire.endTransmission();         // end transmission
-	
-	Wire.beginTransmission(deviceAddr); // start transmission to device
-	Wire.requestFrom(deviceAddr,num);    // request 6 bytes from device
-	
-	if(Wire.available()){
-		*Data = Wire.read();    // receive a byte
-		Wire.endTransmission(); // end transmission
-		return MEMS_SUCCESS;		
-	}else{
-		Wire.endTransmission();
-		return MEMS_ERROR;
-	}
+    Wire.beginTransmission(deviceAddr); // start transmission to device 
+    Wire.write(Reg);             // sends address to read from
+    Wire.endTransmission();         // end transmission
+    
+    Wire.beginTransmission(deviceAddr); // start transmission to device
+    Wire.requestFrom(deviceAddr,num);    // request 6 bytes from device
+    
+    if(Wire.available()){
+        *Data = Wire.read();    // receive a byte
+        Wire.endTransmission(); // end transmission
+        return MEMS_SUCCESS;        
+    }else{
+        Wire.endTransmission();
+        return MEMS_ERROR;
+    }
 }
 
 /*******************************************************************************
-* Function Name		: writeReg
-* Description		: Generic Writing function. It must be full filled with either
-*			        : I2C or SPI writing function
-* Input			    : Register Address, Data to be written
-* Output		    : None
-* Return		    : Status [MEMS_ERROR, MEMS_SUCCESS]
+* Function Name     : writeReg
+* Description       : Generic Writing function. It must be full filled with either
+*                   : I2C or SPI writing function
+* Input             : Register Address, Data to be written
+* Output            : None
+* Return            : Status [MEMS_ERROR, MEMS_SUCCESS]
 *******************************************************************************/
 uint8_t H3LIS331DL::writeReg(byte deviceAddress, byte WriteAddr, byte Data) {
   
@@ -1281,9 +1312,9 @@ uint8_t H3LIS331DL::writeReg(byte deviceAddress, byte WriteAddr, byte Data) {
   // i.e. I2C_ByteWrite(&Data,  deviceAddress,  WriteAddr);  
   //  return MEMS_SUCCESS;
   // Writes val to address register on device
-	Wire.beginTransmission(deviceAddress); // start transmission to device 
-	Wire.write(WriteAddr);             // send register address
-	Wire.write(Data);                 // send value to write
-	Wire.endTransmission();         // end transmission  
+    Wire.beginTransmission(deviceAddress); // start transmission to device 
+    Wire.write(WriteAddr);             // send register address
+    Wire.write(Data);                 // send value to write
+    Wire.endTransmission();         // end transmission  
     return MEMS_SUCCESS;
 }
