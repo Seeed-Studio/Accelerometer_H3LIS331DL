@@ -3,7 +3,7 @@
 ## Xadow - 3-Axis Digital Accelerometer(±400g)
 [![Xadow - 3-Axis Digital Accerometer(±400g)](http://www.seeedstudio.com/depot/bmz_cache/1/1e0d38b123fda92e1872df69dd6145ec.image.530x397.jpg)](http://www.seeedstudio.com/depot/Xadow3Axis-Digital-Accelerometer400g-p-1896.html?cPath=84_120)
 
-This is an Arduino library to use H3LIS331DL as a 3-Axis Digital Accelerometer, it works well with Seeed's [Grove - 3-Axis Digital Accelerometer(±400g)](http://www.seeedstudio.com/depot/Grove-3Axis-Digital-Accelerometer400g-p-1897.html?cPath=25_132) and [Xadow - 3-Axis Digital Accelerometer(±400g)](http://www.seeedstudio.com/depot/Xadow3Axis-Digital-Accelerometer400g-p-1896.html?cPath=84_120) both. For more information, you can visit our wiki [grove_3_Axis_Digital_Accelerometer_H3LIS331DL][1] and [xadow_3_Axis_Digital_Accelerometer_H3LIS331DL][2] 
+The H3LIS331DL is a low power high performance 3-axis linear accelerometer belonging to the “nano” family, with digital I2C serial interface standard output. The device features ultra low power operational modes that allow advanced power saving and smart sleep to wake-up functions. The H3LIS331DL has dynamically user selectable full scales of ±100g/±200 g/±400 g and it is capable of measuring accelerations with output data rates from 0.5 Hz to 1 kHz.  For more information, you can visit our wiki [grove_3_Axis_Digital_Accelerometer_H3LIS331DL][1] and [xadow_3_Axis_Digital_Accelerometer_H3LIS331DL][2] 
 
 ### Features
 + Ultra low power mode consumption down to 10 µA
@@ -18,7 +18,7 @@ This is an Arduino library to use H3LIS331DL as a 3-Axis Digital Accelerometer, 
 + Concussion detection 
 
 ### Getting Started
-please follow the example sketch.(**H3LIS331DL_AdjVal** and **H3LIS331DL_Demo**) Have fun!
+please follow the example sketch(**H3LIS331DL_AdjVal** and **H3LIS331DL_Demo**). Have fun!
 
 
 ----
