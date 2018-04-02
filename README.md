@@ -40,6 +40,6 @@ Thanks for your contribution.
 Seeed is a hardware innovation platform for makers to grow inspirations into differentiating products. By working closely with technology providers of all scale, Seeed provides accessible technologies with quality, speed and supply chain knowledge. When prototypes are ready to iterate, Seeed helps productize 1 to 1,000 pcs using in-house engineering, supply chain management and agile manufacture forces. Seeed also team up with incubators, Chinese tech ecosystem, investors and distribution channels to portal Maker startups beyond.
 
 [1]: http://wiki.seeedstudio.com/Grove-3-Axis_Digital_Accelerometer-400g/
-[2]: http://wiki.seeedstudio.com/Xadow_3_Aixs_Accelerometer/
+[2]: http://wiki.seeedstudio.com/Xadow_3_Aixs_Digital_Accelerometer_plusandminus_400g/
 
 [![Analytics](https://ga-beacon.appspot.com/UA-46589105-3/Accelerometer_H3LIS331DL)](https://github.com/igrigorik/ga-beacon)
