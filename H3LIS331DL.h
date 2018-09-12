@@ -29,7 +29,7 @@
  * THE SOFTWARE.
  */
  
-#include "arduino.h"
+#include "Arduino.h"
 
 #ifndef H3LIS331DL_H
 #define H3LIS331DL_H
