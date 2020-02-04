@@ -1,4 +1,4 @@
-## Accelerometer_H3LIS331DL
+## Accelerometer_H3LIS331DL  [![Build Status](https://travis-ci.com/Seeed-Studio/Accelerometer_H3LIS331DL.svg?branch=master)](https://travis-ci.com/Seeed-Studio/Accelerometer_H3LIS331DL)
 
 ![Grove - 3-Axis Digital Accerometer(±400g)](https://statics3.seeedstudio.com/images/product/grove%203Axis%20Accelerometer400g.jpg)
 
